@@ -1,0 +1,138 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+:root {
+  --font-stack: "Trebuchet MS", BlinkMacSystemFont, "Segoe UI", "Roboto",
+    "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  font-size: 16px;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-stack);
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-stack);
+  color: #fff;
+}
+
+#me {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background-image: linear-gradient(
+    to bottom right,
+    rgb(242, 78, 13),
+    rgb(9, 130, 243)
+  );
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.job-text {
+  position: relative;
+  display: flex;
+}
+
+.job-text-container {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  animation: job-text-container 10s ease infinite;
+}
+
+.job-text-container strong {
+  position: relative;
+  align-self: flex-start;
+}
+
+.job-text-container strong:nth-child(1) {
+  opacity: 1;
+  animation: job-text-shown 10s ease infinite;
+}
+
+.job-text-container strong:nth-child(2) {
+  opacity: 0;
+  animation: job-text-hidden 10s ease infinite;
+}
+
+.flex-1c {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+
+#footer-links {
+  display: flex;
+  gap: 15px;
+}
+
+.link {
+  width: 48px;
+  height: 48px;
+}
+
+iframe#codepen {
+  width: 80%;
+  max-width: 800px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes job-text-container {
+  0%,
+  20%,
+  80%,
+  100% {
+    top: 0;
+  }
+
+  40%,
+  60% {
+    top: -50%;
+  }
+}
+
+@keyframes job-text-hidden {
+  0%,
+  20%,
+  80%,
+  100% {
+    opacity: 0;
+  }
+
+  40%,
+  60% {
+    opacity: 1;
+  }
+}
+
+@keyframes job-text-shown {
+  0%,
+  20%,
+  80%,
+  100% {
+    opacity: 1;
+  }
+
+  40%,
+  60% {
+    opacity: 0;
+  }
+}
